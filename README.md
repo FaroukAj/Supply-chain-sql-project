@@ -3,96 +3,31 @@
 
 Business Analytics Queries for Customer Insights
 
-These SQL queries are designed to provide valuable insights into customer behavior, sales performance, and operational efficiency. By analyzing the data from the sc_customertable and related tables, businesses can make informed decisions to optimize operations, enhance customer experiences, and drive revenue growth.
 
-Table of Contents
+This SQL script demonstrates a comprehensive data analysis project focused on business insights and analytics. By leveraging the sc_customertable and related tables, the script addresses various critical business questions, enabling data-driven decision-making and strategic planning. Here's a breakdown of the key components and their contributions:
 
-Overview
-Queries and Insights
-Updating Sales Currency Values
-Identifying Duplicate Data
-Enhancing Late Delivery Risk Analysis
-Analyzing Customer Segments
-Top Revenue-Generating Markets
-Late Delivery Risk in Specific Cities
-Comparing Late Deliveries and Late Delivery Risks
-Department Sales Performance
-City-Level Revenue Analysis
-Revenue Analysis in Puerto Rico
-Top Revenue-Generating Customer Segments
-Top Revenue-Generating Customers
-Top Selling Products in the USA
-Overview
-
-These queries utilize the sc_customertable and related tables to extract meaningful insights. The results help businesses answer critical questions related to sales, delivery performance, customer segments, and revenue generation. By leveraging these insights, businesses can improve decision-making processes and enhance overall performance.
-
-Queries and Insights
-
-Updating Sales Currency Values
-Query: UPDATE sc_customertable SET Sales_per_customer = ROUND(Sales_per_customer, 2);
-Insight: Updates sales values to two decimal places for improved currency representation.
-
-
-Identifying Duplicate Data
-Query: Checks for duplicate rows based on specific columns.
-Insight: Ensures data integrity and accuracy by identifying and addressing duplicate records.
-
-
-Enhancing Late Delivery Risk Analysis
-Query: Modifies Late_delivery_risk column to display "YES" or "NO".
-Insight: Makes the data more user-friendly and easier to understand.
-
-
-Analyzing Customer Segments
-Query: Calculates average sales per customer for different segments.
-Insight: Identifies high-value customer segments based on average sales.
-
-
-
-Top Revenue-Generating Markets
-Query: Determines the top five revenue-generating markets (regions).
-Insight: Helps prioritize regions with the highest sales potential.
-
-
-Late Delivery Risk in Specific Cities
-Query: Analyzes late delivery risk in specific cities within the USA.
-Insight: Assesses delivery efficiency and identifies areas for improvement.
-
-
-Comparing Late Deliveries and Late Delivery Risks
-Query: Compares actual late deliveries to late delivery risks in specific cities.
-Insight: Highlights the correlation between perceived risks and actual delivery delays.
-
-
-Department Sales Performance
-Query: Orders departments by highest average sales per customer.
-Insight: Identifies departments contributing significantly to revenue.
-
-
-City-Level Revenue Analysis
-Query: Analyzes top cities generating revenue in the USA.
-Insight: Reveals revenue distribution across different cities.
-
-
-Revenue Analysis in Puerto Rico
-Query: Analyzes top cities generating revenue in Puerto Rico.
-Insight: Provides insights into revenue distribution by region.
-
-
-Top Revenue-Generating Customer Segments
-Query: Calculates total revenue for each customer segment.
-Insight: Helps focus marketing efforts on high-revenue segments.
-
-
-Top Revenue-Generating Customers
-Query: Identifies top customers generating the highest revenue.
-Insight: Prioritizes engagement and personalized services for high-value customers.
-
-
-Top Selling Products in the USA
-Query: Identifies the top 10 most selling products in the USA.
-Insight: Informs inventory management and marketing strategies for popular products.
-
-
-
-By using these SQL queries to extract insights from the data, businesses can gain a deeper understanding of their operations, customer preferences, and revenue drivers. This information empowers decision-makers to implement targeted strategies, optimize resources, and ultimately thrive in a competitive market environment.
+Optimizing Sales Currency Representation:
+Rounds the Sales_per_customer values to two decimal places, ensuring accurate currency representation for financial analysis.
+Enhancing Data Integrity:
+Identifies and addresses duplicate data in the sc_customertable based on specific attributes, enhancing data quality and integrity.
+Simplifying Late Delivery Risk Analysis:
+Converts the Late_delivery_risk column values from 0 and 1 to user-friendly "YES" or "NO" labels for clearer risk assessment.
+Customer Segment Analysis:
+Calculates the average sales per customer segment, providing insights into the performance of different customer groups.
+Top Revenue-Generating Markets:
+Determines the top five revenue-generating markets (regions) by analyzing total sales per market.
+Late Delivery Risk Assessment by City:
+Analyzes late delivery risk in specific cities within the USA, offering insights into potential delivery efficiency challenges.
+Comparing Late Deliveries and Delivery Risks:
+Compares the count of actual late deliveries to the late delivery risk count in specific cities, revealing alignment or discrepancies.
+Departmental Sales Performance:
+Evaluates departmental performance by calculating the average sales per customer for each department.
+City-Level Revenue Analysis:
+Analyzes top revenue-generating cities in the USA and Puerto Rico, highlighting revenue distribution patterns.
+Strategic Customer Segment Analysis:
+Calculates total revenue per customer segment, aiding in targeted marketing and resource allocation.
+Identifying Top Revenue Contributors:
+Identifies the top five highest revenue-generating customers, assisting in personalized engagement strategies.
+Trending Product Performance:
+Identifies the top 10 most selling products in the USA based on product revenue, guiding inventory management and marketing strategies.
+This project showcases the versatility of SQL in extracting actionable insights from complex datasets. The analysis offers business stakeholders valuable information to optimize operations, enhance customer experiences, and drive revenue growth. It highlights the role of a data analyst in transforming raw data into strategic insights, ultimately contributing to informed decision-making and business success.
