@@ -3,13 +3,16 @@ USE customers;
 SHOW columns
 FROM  sc_customertable ;
 
-
--- UPDATE Sales Field to two decimal places for better currency value
+ 
+-- (Updating Currency Values:
+--Ensured accurate representation of currency values by rounding the "Sales_per_customer" column to two decimal places.
+-- UPDATE Sales Field to two decimal places for better currency value)
 UPDATE sc_customertable 
 SET  Sales_per_customer = (SELECT ROUND(Sales_per_customer, 2))
 ;
 
--- Check for duplicates in our data
+-- (uplicate Data Check:
+-- Identified and highlighted duplicate rows in the dataset based on specific criteria.)
 WITH dup_rows AS 
 (
 SELECT *,
@@ -21,7 +24,8 @@ SELECT *
 FROM dup_rows
 WHERE dup_row_num = 2;
 
--- MODIFY Late_delivery_risk column from 0 and 1 to YES OR NO
+-- (Updating Late Delivery Risk Column:
+-- Enhanced clarity by converting values in the "Late_delivery_risk" column from binary to "YES" or "NO".)
 ALTER TABLE sc_customertable  MODIFY COLUMN Late_delivery_risk VARCHAR(10);
 
 UPDATE sc_customertable  
@@ -30,10 +34,11 @@ SET Late_delivery_risk = (select CASE WHEN Late_delivery_risk = 1 THEN "YES"
                                  END AS Late_delivery_risk );
 
 
--- Which customer segment has the highest average sales per customer?
+-- ("consumer" segment has the highest average sales.
+-- Analytical Business Question Answered: The "Consumer" customer segment generates the highest average revenue per customer, indicating potential marketing opportunities to further engage this segment.)
 SELECT 
-		Customer_Segment
-	   , ROUND(AVG(Sales_per_customer),2) AS Avg_Sale_Per_Customer_segment
+	Customer_Segment
+	, ROUND(AVG(Sales_per_customer),2) AS Avg_Sale_Per_Customer_segment
 FROM sc_customertable
 GROUP BY Customer_Segment
 ORDER BY Avg_Sale_Per_Customer_segment DESC;
@@ -45,7 +50,8 @@ SELECT
     ,ROUND(SUM(Sales_per_customer),2) AS Total_revenue
 FROM sc_customertable cust
 GROUP BY cust.Market;
-    
+
+--
 
 
 -- Do customers in certain cities FROM THE USA tend to experience a higher late delivery risk?
@@ -147,9 +153,6 @@ ON pt.Product_Card_Id = ot.Order_Product_Id
 GROUP BY pt.Product_Name
 ORDER BY Product_revenue DESC
 LIMIT 10;
-
-
-
 
 
 
